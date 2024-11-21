@@ -1,0 +1,203 @@
+/* General Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Prevent scrolling */
+html, body {
+  overflow: hidden;
+  height: 100%;
+  width: 100%;
+}
+
+/* Body Styling */
+body {
+  font-family: Arial, sans-serif;
+  background: #f8f9fa;
+  color: #333;
+  display: flex;
+  flex-direction: column;
+  height: 100vh; /* Use viewport height */
+  width: 100vw;  /* Use viewport width */
+}
+
+/* Header Styling */
+header {
+  background: #ffffff;
+  border-bottom: 1px solid #ddd;
+  padding: 5px 10px;
+  flex-shrink: 0;
+}
+
+#header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+header h1 {
+  font-size: 1.2rem;
+  text-align: center;
+}
+
+.icon-button {
+  background: #dc3545;
+  color: white;
+  border: none;
+  padding: 5px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+/* Huiswerk Section */
+#huiswerk-container {
+  padding: 5px 10px;
+  text-align: center;
+  flex-shrink: 0;
+}
+
+.huiswerk-button {
+  width: 100%;
+  padding: 8px;
+  background: #dc3545;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.huiswerk-button.green {
+  background: #28a745;
+  color: white;
+}
+
+/* Planner Sections */
+#planner {
+  flex-grow: 1;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.sector {
+  flex: 1;
+  padding: 5px;
+  background: #ffffff;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  margin: 5px 10px;
+}
+
+.sector-header {
+  text-align: center;
+  flex-shrink: 0;
+}
+
+.emoji-placeholders {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-grow: 1;
+}
+
+.emoji-placeholder {
+  width: 18%;
+  max-width: 50px;
+  aspect-ratio: 1;
+  background: #f0f0f0;
+  border: 2px dashed #6c757d;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 2px;
+  transition: border-color 0.3s ease, background-color 0.3s ease;
+  font-size: 1.2rem;
+}
+
+.emoji-placeholder.highlight {
+  border-color: #007bff;
+  background-color: #dce6f8;
+  transform: scale(1.05);
+}
+
+.sector-notes {
+  margin-top: 5px;
+  width: 100%;
+  padding: 6px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-size: 0.8rem;
+  flex-shrink: 0;
+}
+
+/* Emoji Deck */
+#emoji-deck {
+  background: #ffffff;
+  border-top: 1px solid #ddd;
+  padding: 5px 10px;
+  flex-shrink: 0;
+  height: var(--emoji-deck-height, 100px);
+}
+
+.emoji-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(30px, 1fr));
+  gap: 5px;
+  max-height: calc(2 * (1.2em + 5px)); /* Limit to two rows */
+  overflow: hidden;
+}
+
+.emoji-item {
+  font-size: 1.2rem;
+  text-align: center;
+  cursor: grab;
+}
+
+/* Disable user selection */
+body, button, input {
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+/* Prevent zooming on input focus */
+input {
+  font-size: 16px;
+}
+
+/* Responsive Design */
+@media (min-width: 600px) {
+  header h1 {
+    font-size: 1.5rem;
+  }
+
+  .huiswerk-button {
+    font-size: 1rem;
+  }
+
+  .sector-notes {
+    font-size: 0.9rem;
+  }
+
+  .emoji-placeholder {
+    font-size: 1.5rem;
+  }
+
+  .emoji-item {
+    font-size: 1.5rem;
+  }
+}
+
+@media (min-height: 800px) {
+  #emoji-deck {
+    height: var(--emoji-deck-height, 150px);
+  }
+}
